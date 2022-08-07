@@ -1,2 +1,1 @@
-# Vue 3 + TypeScript + Vite
-admin template
+# admin template
