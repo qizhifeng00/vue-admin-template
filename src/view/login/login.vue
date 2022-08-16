@@ -6,15 +6,31 @@
         <div class="view-account-top-logo">
           <!-- <img :src="websiteConfig.loginImage" alt="" /> -->
         </div>
-        <div class="view-account-top-desc">{{ '。。。' }}</div>
+        <div class="view-account-top-desc">{{ "。。。" }}</div>
       </div>
       <div class="view-account-form">
-        <n-form ref="formRef" label-placement="left" size="large" :model="formInline" :rules="rules">
+        <n-form
+          ref="formRef"
+          label-placement="left"
+          size="large"
+          :model="formInline"
+          :rules="rules"
+        >
           <n-form-item path="username">
-            <n-input v-model:value="formInline.username" placeholder="请输入用户名"> </n-input>
+            <n-input
+              v-model:value="formInline.username"
+              placeholder="请输入用户名"
+            >
+            </n-input>
           </n-form-item>
           <n-form-item path="password">
-            <n-input v-model:value="formInline.password" type="password" showPasswordOn="click" placeholder="请输入密码"> </n-input>
+            <n-input
+              v-model:value="formInline.password"
+              type="password"
+              showPasswordOn="click"
+              placeholder="请输入密码"
+            >
+            </n-input>
           </n-form-item>
           <!-- <n-form-item class="default-color">
             <div class="flex justify-between">
@@ -27,7 +43,9 @@
             </div>
           </n-form-item> -->
           <n-form-item>
-            <n-button type="primary" @click="handleSubmit" size="large" block> 登录 </n-button>
+            <n-button type="primary" @click="handleSubmit" size="large" block>
+              登录
+            </n-button>
           </n-form-item>
           <!-- <n-form-item class="default-color">
             <div class="flex view-account-other">
@@ -52,24 +70,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive } from "vue";
 interface FormState {
-  username: string
-  password: string
+  username: string;
+  password: string;
 }
 
 const formInline = reactive({
-  username: 'admin',
-  password: '123456',
+  username: "admin",
+  password: "123456",
   isCaptcha: true,
-})
-const formRef = ref()
+});
+const formRef = ref();
 const rules = {
-  username: { required: true, message: '请输入用户名', trigger: 'blur' },
-  password: { required: true, message: '请输入密码', trigger: 'blur' },
-}
+  username: { required: true, message: "请输入用户名", trigger: "blur" },
+  password: { required: true, message: "请输入密码", trigger: "blur" },
+};
 
-const handleSubmit = (e) => {}
+const handleSubmit = (e: any) => {
+  console.log(e);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -112,7 +132,7 @@ const handleSubmit = (e) => {}
 
 @media (min-width: 768px) {
   .view-account {
-    background-image: url('../../assets/images/login.svg');
+    background-image: url("../../assets/images/login.svg");
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100%;
