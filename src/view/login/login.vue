@@ -70,26 +70,47 @@
 </template>
 
 <script setup lang="ts">
+<<<<<<< Updated upstream
 import { ref, reactive } from "vue";
+=======
+import { ref, reactive } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+>>>>>>> Stashed changes
 interface FormState {
   username: string;
   password: string;
 }
 
+const router = useRouter()
+
+const route = useRoute()
+
 const formInline = reactive({
   username: "admin",
   password: "123456",
   isCaptcha: true,
+<<<<<<< Updated upstream
 });
 const formRef = ref();
+=======
+})
+const formRef = ref()
+
+>>>>>>> Stashed changes
 const rules = {
   username: { required: true, message: "请输入用户名", trigger: "blur" },
   password: { required: true, message: "请输入密码", trigger: "blur" },
 };
 
+<<<<<<< Updated upstream
 const handleSubmit = (e: any) => {
   console.log(e);
 };
+=======
+const handleSubmit = (e) => {
+  router.replace('/home')
+}
+>>>>>>> Stashed changes
 </script>
 
 <style lang="scss" scoped>
